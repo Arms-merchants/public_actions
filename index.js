@@ -44,12 +44,12 @@ const { autoGame } = require('./src/games/autoRun');
 
   console.log(`当前矿石：${now_score}`);
 
-  let dip_res;
-  try {
+  let dip_res = '沾喜气没了';
+  /*try {
     dip_res = await dipLucky();
   } catch (error) {
     dip_res = error;
-  }
+  }*/
 
   console.log(dip_res);
 
