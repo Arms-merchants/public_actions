@@ -19,14 +19,17 @@ async function sign_in() {
   if (today_status.data) return '今日已经签到！';
 
   // 签到
-  const res = await fetch('https://api.juejin.cn/growth_api/v1/check_in', {
-    headers,
+  const response = await fetch('https://api.juejin.cn/growth_api/v1/check_in',{
+     headers,
     method: 'POST',
     credentials: 'include'
-  }).then((res) => res.json());
-
+  });
+  if (!response.ok) {
+      const errorText = await response.text(); // 读取响应文本
+      throw new Error(`HTTP error! status: ${response.status} - ${errorText}`);
+  }
+  const res = await response.json();
   if (res.err_no !== 0) return Promise.reject('签到异常！');
-
   return `签到成功！`;
 }
 
