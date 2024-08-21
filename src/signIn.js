@@ -5,7 +5,7 @@
  *  */
 
 const fetch = require('node-fetch');
-const { headers } = require('./config');
+const { headers,UUID,MS_TOKEN,A_BOGUS } = require('./config');
 
 async function sign_in() {
   // 查询今日是否已经签到
@@ -19,7 +19,7 @@ async function sign_in() {
   if (today_status.data) return '今日已经签到！';
 
   // 签到
-  const response = await fetch('https://api.juejin.cn/growth_api/v1/check_in',{
+  const response = await fetch('https://api.juejin.cn/growth_api/v1/check_in?aid=2608&uuid=${UUID}&spider=0&msToken=${MS_TOKEN}$a_bogus=${A_BOGUS}',{
      headers,
     method: 'POST',
     credentials: 'include'
