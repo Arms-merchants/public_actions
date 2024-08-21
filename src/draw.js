@@ -5,7 +5,7 @@
  *  */
 
 const fetch = require('node-fetch');
-const { headers } = require('./config');
+const { headers,UUID,MS_TOKEN,A_BOGUS } = require('./config');
 
 async function draw() {
   // 查询今日是否有免费抽奖机会
@@ -19,7 +19,7 @@ async function draw() {
   if (today.data.free_count === 0) return '今日已经免费抽奖！';*/
 
   // 免费抽奖
-  const res = await fetch('https://api.juejin.cn/growth_api/v1/lottery/draw', {
+  const res = await fetch('https://api.juejin.cn/growth_api/v1/lottery/draw?aid=2608&uuid=${UUID}&spider=0&msToken=${MS_TOKEN}$a_bogus=${A_BOGUS}', {
     headers,
     method: 'POST',
     credentials: 'include'
