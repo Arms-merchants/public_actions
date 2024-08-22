@@ -12,4 +12,4 @@ const headers = {
   cookie: COOKIE
 };
 
-module.exports = { headers, user: USER, pass: PASS, to: TO, uid: UID, DD_BOT_TOKEN, DD_BOT_SECRET,UUID,MS_TOKEN,A_BOGUS };
+module.exports = { headers, user: USER, pass: PASS, to: TO, uid: UID, DD_BOT_TOKEN, DD_BOT_SECRET,UUID,MS_TOKEN,A_BOGUS,COOKIE };
