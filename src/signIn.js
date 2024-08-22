@@ -21,9 +21,9 @@ async function sign_in() {
   // 签到
   const response = await fetch('https://api.juejin.cn/growth_api/v1/check_in?aid=2608&uuid=${UUID}&spider=0&msToken=${MS_TOKEN}$a_bogus=${A_BOGUS}',{
      headers,
-    method: 'POST',
-    credentials: 'include'
-  }).then((res) => res.json());
+    method: 'POST'
+    //credentials: 'include'
+  })
   console.log(response);
   if (!response.ok) {
       const errorText = await response.text(); // 读取响应文本
