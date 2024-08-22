@@ -23,7 +23,7 @@ async function sign_in() {
      headers,
     method: 'POST',
     credentials: 'include'
-  });
+  }).then((res) => res.json());
   console.log(response);
   if (!response.ok) {
       const errorText = await response.text(); // 读取响应文本
