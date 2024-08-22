@@ -3,20 +3,10 @@
  * 签到
  *
  *  */
-const Juejin = require('./jueApi.js')
 const fetch = require('node-fetch');
 const { headers,UUID,MS_TOKEN,A_BOGUS,COOKIE } = require('./config');
 
 async function sign_in() {
-  const juejin = new Juejin()
-   // 登录
-  try {
-    await juejin.login(COOKIE)
-    consloe.log(  juejin.user.user_name)
-  } catch {
-    throw new Error('登录失败, 请尝试更新 Cookies')
-  }
-  return;
   // 查询今日是否已经签到
   const today_status = await fetch('https://api.juejin.cn/growth_api/v1/get_today_status', {
     headers,
