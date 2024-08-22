@@ -24,6 +24,7 @@ async function sign_in() {
     method: 'POST',
     credentials: 'include'
   });
+  console.log(response);
   if (!response.ok) {
       const errorText = await response.text(); // 读取响应文本
       throw new Error(`HTTP error! status: ${response.status} - ${errorText}`);
