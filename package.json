@@ -22,9 +22,12 @@
     "got": "^11.8.2",
     "jsonwebtoken": "^8.5.1",
     "node-fetch": "^2.6.7",
-    "nodemailer": "^6.6.3"
+    "nodemailer": "^6.6.3"，
+    "axios": "^0.27.2",
+    "nodemailer": "^6.7.6"
   },
   "devDependencies": {
-    "dotenv": "^16.0.0"
+    "dotenv": "^16.0.0"，
+    "nodemon": "^2.0.16"
   }
 }
